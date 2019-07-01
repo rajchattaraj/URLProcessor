@@ -72,8 +72,8 @@ public class UrlConsumer {
                     }
 
                 };
-                httpclient.execute(httpget, responseHandler);
                 statusMap.put("req.sent", statusMap.getOrDefault("req.sent", 0)+1);
+                httpclient.execute(httpget, responseHandler);
             }catch (IOException e){
                 e.printStackTrace();// should be at debug level
                 statusMap.put("req.error", statusMap.getOrDefault("req.error", 0)+1);
